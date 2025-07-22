@@ -30,9 +30,10 @@
 4. **Tabla de Habitaciones**  
    ![Tabla de Habitaciones](/imagenesExam/Habitaciones.jpg)
 
+## 🧩 Diagrama UML
 
-## Diagrama UML
 ![UML](/imagenesExam/GestionHotel.png)
+
 
 ## Estructura del Proyecto
 /src
