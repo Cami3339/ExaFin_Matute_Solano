@@ -1,4 +1,5 @@
 package modelos;
+
 import java.io.Serializable;
 import java.time.LocalDate;
 
@@ -18,13 +19,64 @@ public class Reserva implements Pago, Serializable {
     @Override
     public double calcularTotal() {
         long dias = fechaFin.toEpochDay() - fechaInicio.toEpochDay();
-        double precioPorDia = switch (habitacion.getTipo()) {
+        if (dias <= 0) {
+            dias = 1; // Al menos 1 día
+        }
+
+        double precioPorDia;
+        precioPorDia = switch (habitacion.getTipo()) {
             case INDIVIDUAL -> 50;
             case DOBLE -> 80;
             case SUITE -> 120;
+            default -> 0;
         };
-        return dias * precioPorDia;
+        return precioPorDia * dias;
     }
 
-    // Getters, setters, toString
+
+    // Getters
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public Habitacion getHabitacion() {
+        return habitacion;
+    }
+
+    public LocalDate getFechaInicio() {
+        return fechaInicio;
+    }
+
+    public LocalDate getFechaFin() {
+        return fechaFin;
+    }
+
+    // Setters
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public void setHabitacion(Habitacion habitacion) {
+        this.habitacion = habitacion;
+    }
+
+    public void setFechaInicio(LocalDate fechaInicio) {
+        this.fechaInicio = fechaInicio;
+    }
+
+    public void setFechaFin(LocalDate fechaFin) {
+        this.fechaFin = fechaFin;
+    }
+
+    @Override
+    public String toString() {
+        return "Reserva{" +
+                "cliente=" + cliente.getNombre() + " " + cliente.getApellido() +
+                ", habitacion=" + habitacion.getNumero() +
+                ", tipo=" + habitacion.getTipo() +
+                ", fechaInicio=" + fechaInicio +
+                ", fechaFin=" + fechaFin +
+                ", total=$" + calcularTotal() +
+                '}';
+    }
 }
