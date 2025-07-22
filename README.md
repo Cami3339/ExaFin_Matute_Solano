@@ -33,3 +33,13 @@
 ![UML](/resources/diagramas/uml_hotel.png)
 
 ## Estructura del Proyecto
+Sistema_Hotel_Matute_Solano/
+├── src/
+│ ├── controlador/ # Lógica de control e interacción
+│ ├── modelos/ # Clases del dominio (Cliente, Reserva, etc.)
+│ ├── util/ # Utilidades (manejo de archivos)
+│ ├── vista/ # Interfaces gráficas
+│ └── main/ # Clase principal del sistema
+└── resources/
+├── screenshots/ # Capturas de pantalla
+└── diagramas/ # Diagrama UML
