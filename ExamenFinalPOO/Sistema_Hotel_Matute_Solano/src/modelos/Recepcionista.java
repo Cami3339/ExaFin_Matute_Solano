@@ -1,4 +1,4 @@
-package modelo;
+package modelos;
 
 public class Recepcionista extends Usuario {
     public Recepcionista(String nombre, String apellido, String usuario, String contraseña) {
