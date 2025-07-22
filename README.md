@@ -18,7 +18,8 @@
 
 ## Capturas de Pantalla
 1. Login  
-<img width="474" height="291" alt="Captura de pantalla 2025-07-22 134141" src="https://github.com/user-attachments/assets/beae1e15-5aef-48dc-8215-8eb41b1948c6" />
+<img width="505" height="336" alt="image" src="https://github.com/user-attachments/assets/c0372742-71ac-4894-8437-f67b6e8e63f6" />
+
 
 
 
