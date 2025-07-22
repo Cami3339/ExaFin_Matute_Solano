@@ -16,18 +16,20 @@
    javac -d bin src/**/*.java  
    java main.Main
 
-## Capturas de Pantalla
-1. Login  
-![Login](/imagenesExam/Login.jpg)
+## 📸 Capturas de Pantalla
 
-2. Menú Principal  
-![Men](/imagenesExam/Clientes.jpg)
+1. **Login**  
+   ![Login](/imagenesExam/Login.jpg)
 
-3. Formulario de Reserva  
-![Reservas](/imagenesExam/Reserva.jpg)
+2. **Menú Principal**  
+   ![Menú Principal](/imagenesExam/Clientes.jpg)
 
-4. Tabla de Habitaciones  
-![Habitaciones](/imagenesExam/Habitaciones.jpg)
+3. **Formulario de Reserva**  
+   ![Formulario de Reserva](/imagenesExam/Reservas.jpg)
+
+4. **Tabla de Habitaciones**  
+   ![Tabla de Habitaciones](/imagenesExam/Habitaciones.jpg)
+
 
 ## Diagrama UML
 ![UML](/imagenesExam/GestionHotel.png)
