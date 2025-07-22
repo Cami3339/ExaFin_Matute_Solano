@@ -21,10 +21,10 @@
 ![Login](/imagenesExam/Login.jpg)
 
 2. Menú Principal  
-![Menú](/imagenesExam/Clientes.jpg)
+![Men](/imagenesExam/Clientes.jpg)
 
 3. Formulario de Reserva  
-![Reserva](/imagenesExam/Reserva.jpg)
+![Reservas](/imagenesExam/Reserva.jpg)
 
 4. Tabla de Habitaciones  
 ![Habitaciones](/imagenesExam/Habitaciones.jpg)
@@ -33,3 +33,15 @@
 ![UML](/imagenesExam/GestionHotel.png)
 
 ## Estructura del Proyecto
+/src
+ ├─ modelos/
+ ├─ vista/
+ ├─ controlador/
+ └─ Main.java
+/imagenesExam/
+ ├─ Clientes.jpg
+ ├─ GestionHotel.png
+ ├─ Habitaciones.jpg
+ ├─ Login.jpg
+ └─ Reservas.jpg
+README.md
