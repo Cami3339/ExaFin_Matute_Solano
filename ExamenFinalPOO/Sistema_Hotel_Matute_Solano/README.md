@@ -1,18 +1,35 @@
-## Getting Started
+# Sistema de Gestión de Reservas de Hotel
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Integrantes
+- Camila Matute (Vista/Controlador)
+- Andres Solano (Modelo/Persistencia)
 
-## Folder Structure
+## Requisitos
+- Java 11 o superior
+- IDE compatible (NetBeans, IntelliJ, Eclipse)
+- Librerías adicionales: Ninguna (opcionalmente SQLite, JCalendar)
 
-The workspace contains two folders by default, where:
+## Instrucciones
+1. Clonar el repositorio:  
+   git clone https://github.com/AndresS505-star/ExaFin_Matute_Solano/edit/main/ExamenFinalPOO/Sistema_Hotel_Matute_Solano/README.md
+2. Compilar y ejecutar desde IDE o consola:  
+   javac -d bin src/**/*.java  
+   java main.Main
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## Capturas de Pantalla
+1. Login  
+![Login](/resources/screenshots/login.png)
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+2. Menú Principal  
+![Menú](/resources/screenshots/menu.png)
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+3. Formulario de Reserva  
+![Reserva](/resources/screenshots/reserva.png)
 
-## Dependency Management
+4. Tabla de Habitaciones  
+![Habitaciones](/resources/screenshots/habitaciones.png)
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Diagrama UML
+![UML](/resources/diagramas/uml_hotel.png)
+
+## Estructura del Proyecto
