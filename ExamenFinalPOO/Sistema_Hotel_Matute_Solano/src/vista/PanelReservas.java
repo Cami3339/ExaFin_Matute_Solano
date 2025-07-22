@@ -1,8 +1,8 @@
 package vista;
 
-import modelos.Cliente;
-import modelos.Habitacion;
-import modelos.Reserva;
+import modelo.Cliente;
+import modelo.Habitacion;
+import modelo.Reserva;
 import util.ArchivoUtil;
 
 import javax.swing.*;
@@ -79,5 +79,66 @@ public class PanelReservas extends JPanel {
         }
     }
 
-    private void cargarTabla
+    private void cargarTabla() {
+        for (Reserva r : reservas) {
+            modeloTabla.addRow(new Object[]{
+                r.getCliente().getNombre(),
+                r.getHabitacion().getNumero(),
+                r.getFechaInicio(),
+                r.getFechaFin(),
+                "$" + r.calcularTotal()
+            });
+        }
+    }
 
+    private void reservar() {
+        try {
+            String cedula = cmbClientes.getSelectedItem().toString().split(" - ")[0];
+            Cliente cliente = clientes.stream().filter(c -> c.getCedula().equals(cedula)).findFirst().orElse(null);
+            int numHab = (int) cmbHabitaciones.getSelectedItem();
+            Habitacion habitacion = habitaciones.stream().filter(h -> h.getNumero() == numHab).findFirst().orElse(null);
+
+            LocalDate inicio = LocalDate.parse(txtFechaInicio.getText());
+            LocalDate fin = LocalDate.parse(txtFechaFin.getText());
+
+            if (inicio.isAfter(fin)) {
+                JOptionPane.showMessageDialog(this, "La fecha de inicio no puede ser después de la fecha de fin.");
+                return;
+            }
+
+            // Validar superposición
+            for (Reserva r : reservas) {
+                if (r.getHabitacion().getNumero() == numHab) {
+                    if (!(fin.isBefore(r.getFechaInicio()) || inicio.isAfter(r.getFechaFin()))) {
+                        JOptionPane.showMessageDialog(this, "La habitación ya está reservada en ese rango de fechas.");
+                        return;
+                    }
+                }
+            }
+
+            Reserva nueva = new Reserva(cliente, habitacion, inicio, fin);
+            reservas.add(nueva);
+            ArchivoUtil.guardar(RUTA_RESERVAS, reservas);
+
+            // Actualizar tabla
+            modeloTabla.addRow(new Object[]{
+                cliente.getNombre(),
+                habitacion.getNumero(),
+                inicio.toString(),
+                fin.toString(),
+                "$" + nueva.calcularTotal()
+            });
+
+            lblTotal.setText("Total: $" + nueva.calcularTotal());
+            limpiarCampos();
+
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Error: verifique que los campos estén completos y válidos.");
+        }
+    }
+
+    private void limpiarCampos() {
+        txtFechaInicio.setText("");
+        txtFechaFin.setText("");
+    }
+}
