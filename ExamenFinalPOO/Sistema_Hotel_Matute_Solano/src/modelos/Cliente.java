@@ -1,13 +1,18 @@
+// Paquete donde se encuentran las clases modelo del sistema
 package modelos;
 
+// Importa la interfaz Serializable para permitir que objetos Cliente puedan ser serializados (guardados/recuperados fácilmente)
 import java.io.Serializable;
 
+// Clase Cliente que representa a un cliente y puede ser serializada
 public class Cliente implements Serializable {
-    private String cedula;
-    private String nombre;
-    private String apellido;
-    private String telefono;
+    // Atributos privados que almacenan los datos del cliente
+    private String cedula;    // Documento de identidad del cliente
+    private String nombre;    // Nombre del cliente
+    private String apellido;  // Apellido del cliente
+    private String telefono;  // Teléfono del cliente
 
+    // Constructor que inicializa un objeto Cliente con todos sus datos
     public Cliente(String cedula, String nombre, String apellido, String telefono) {
         this.cedula = cedula;
         this.nombre = nombre;
@@ -15,7 +20,8 @@ public class Cliente implements Serializable {
         this.telefono = telefono;
     }
 
-    // Getters
+    // Métodos getters para obtener el valor de cada atributo
+
     public String getCedula() {
         return cedula;
     }
@@ -32,7 +38,8 @@ public class Cliente implements Serializable {
         return telefono;
     }
 
-    // Setters
+    // Métodos setters para modificar el valor de cada atributo
+
     public void setCedula(String cedula) {
         this.cedula = cedula;
     }
@@ -49,8 +56,10 @@ public class Cliente implements Serializable {
         this.telefono = telefono;
     }
 
+    // Método toString sobrescrito para representar el objeto Cliente como una cadena legible
     @Override
     public String toString() {
+        // Devuelve el nombre completo y la cédula para mostrar información clara del cliente
         return nombre + " " + apellido + " (Cédula: " + cedula + ")";
     }
 }
