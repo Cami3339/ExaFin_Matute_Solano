@@ -18,16 +18,16 @@
 
 ## Capturas de Pantalla
 1. Login  
-![Login](/resources/screenshots/login.png)
+![Login]("C:\Users\Usuario\Pictures\Screenshots\Captura de pantalla 2025-07-22 134141.png")
 
 2. Menú Principal  
-![Menú](/resources/screenshots/menu.png)
+![Menú]("C:\Users\Usuario\Pictures\Screenshots\Captura de pantalla 2025-07-22 134127.png")
 
 3. Formulario de Reserva  
-![Reserva](/resources/screenshots/reserva.png)
+![Reserva]("C:\Users\Usuario\Pictures\Screenshots\Captura de pantalla 2025-07-22 134040.png")
 
 4. Tabla de Habitaciones  
-![Habitaciones](/resources/screenshots/habitaciones.png)
+![Habitaciones]("C:\Users\Usuario\Pictures\Screenshots\Captura de pantalla 2025-07-22 134027.png")
 
 ## Diagrama UML
 ![UML](/resources/diagramas/uml_hotel.png)
