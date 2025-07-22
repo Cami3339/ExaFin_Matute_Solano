@@ -1,6 +1,6 @@
 package vista;
 
-import modelo.Cliente;
+import modelos.Cliente;
 import util.ArchivoUtil;
 
 import javax.swing.*;
