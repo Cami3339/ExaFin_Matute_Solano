@@ -1,8 +1,8 @@
 package modelo;
-
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Reserva implements Pago {
+public class Reserva implements Pago, Serializable {
     private Cliente cliente;
     private Habitacion habitacion;
     private LocalDate fechaInicio;
