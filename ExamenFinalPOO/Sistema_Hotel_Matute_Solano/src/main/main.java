@@ -3,7 +3,7 @@ package main;
 import controlador.LoginController;
 import vista.LoginView;
 
-public class Main {
+public class main {
     public static void main(String[] args) {
         LoginView login = new LoginView();
         new LoginController(login);
