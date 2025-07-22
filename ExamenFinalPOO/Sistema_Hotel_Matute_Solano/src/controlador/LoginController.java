@@ -1,8 +1,8 @@
 package controlador;
 
-import modelo.Administrador;
-import modelo.Recepcionista;
-import modelo.Usuario;
+import modelos.Administrador;
+import modelos.Recepcionista;
+import modelos.Usuario;
 import vista.LoginView;
 import vista.MenuPrincipalView;
 
@@ -32,8 +32,8 @@ public class LoginController {
         Usuario admin = new Administrador("Juan", "Pérez", "admin", "1234");
         Usuario recep = new Recepcionista("Lucía", "Lopez", "recep", "abcd");
 
-        if ((usuarioIngresado.equals(admin.usuario) && contraseñaIngresada.equals(admin.contraseña)) ||
-            (usuarioIngresado.equals(recep.usuario) && contraseñaIngresada.equals(recep.contraseña))) {
+        if (admin.validarCredenciales(usuarioIngresado, contraseñaIngresada) ||
+            recep.validarCredenciales(usuarioIngresado, contraseñaIngresada)) {
 
             loginView.dispose(); // Cierra la ventana de login
             MenuPrincipalView menu = new MenuPrincipalView();
@@ -43,3 +43,4 @@ public class LoginController {
         }
     }
 }
+
