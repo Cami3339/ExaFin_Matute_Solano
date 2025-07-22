@@ -1,8 +1,8 @@
 package vista;
 
-import modelo.Cliente;
-import modelo.Habitacion;
-import modelo.Reserva;
+import modelos.Cliente;
+import modelos.Habitacion;
+import modelos.Reserva;
 import util.ArchivoUtil;
 
 import javax.swing.*;
