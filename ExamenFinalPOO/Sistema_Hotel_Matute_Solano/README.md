@@ -18,18 +18,18 @@
 
 ## Capturas de Pantalla
 1. Login  
-![Login](/resources/screenshots/login.png)
+![Login](/imagenesExam/Login.jpg)
 
 2. Menú Principal  
-![Menú](/resources/screenshots/menu.png)
+![Menú](/imagenesExam/Clientes.jpg)
 
 3. Formulario de Reserva  
-![Reserva](/resources/screenshots/reserva.png)
+![Reserva](/imagenesExam/Reserva.jpg)
 
 4. Tabla de Habitaciones  
-![Habitaciones](/resources/screenshots/habitaciones.png)
+![Habitaciones](/imagenesExam/Habitaciones.jpg)
 
 ## Diagrama UML
-![UML](/resources/diagramas/uml_hotel.png)
+![UML](/imagenesExam/GestionHotel.png)
 
 ## Estructura del Proyecto
