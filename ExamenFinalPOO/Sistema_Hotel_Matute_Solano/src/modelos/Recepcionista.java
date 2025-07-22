@@ -10,3 +10,4 @@ public class Recepcionista extends Usuario {
         return "Recepcionista";
     }
 }
+
