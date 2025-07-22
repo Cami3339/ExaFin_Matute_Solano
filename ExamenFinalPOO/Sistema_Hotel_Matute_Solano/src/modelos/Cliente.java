@@ -1,6 +1,6 @@
-import java.io.Serializable;
+package modelos;
 
-package modelo;
+import java.io.Serializable;
 
 public class Cliente implements Serializable {
     private String cedula;
