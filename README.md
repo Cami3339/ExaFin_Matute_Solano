@@ -18,16 +18,20 @@
 
 ## Capturas de Pantalla
 1. Login  
-![Login]("C:\Users\Usuario\Pictures\Screenshots\Captura de pantalla 2025-07-22 134141.png")
+<img width="474" height="291" alt="Captura de pantalla 2025-07-22 134141" src="https://github.com/user-attachments/assets/beae1e15-5aef-48dc-8215-8eb41b1948c6" />
+
+
 
 2. Menú Principal  
-![Menú]("C:\Users\Usuario\Pictures\Screenshots\Captura de pantalla 2025-07-22 134127.png")
+<img width="981" height="735" alt="Captura de pantalla 2025-07-22 134027" src="https://github.com/user-attachments/assets/c954339b-3409-4efa-9657-8b3e1b234b43" />
 
 3. Formulario de Reserva  
-![Reserva]("C:\Users\Usuario\Pictures\Screenshots\Captura de pantalla 2025-07-22 134040.png")
+<img width="976" height="732" alt="Captura de pantalla 2025-07-22 134127" src="https://github.com/user-attachments/assets/abc356b5-7994-4479-ab74-e90443693b74" />
+
+
 
 4. Tabla de Habitaciones  
-![Habitaciones]("C:\Users\Usuario\Pictures\Screenshots\Captura de pantalla 2025-07-22 134027.png")
+<img width="975" height="748" alt="Captura de pantalla 2025-07-22 134040" src="https://github.com/user-attachments/assets/c116a9a5-4a34-406b-96d2-37bbd5dba479" />
 
 ## Diagrama UML
 ![UML](/resources/diagramas/uml_hotel.png)
