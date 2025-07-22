@@ -15,7 +15,7 @@ public abstract class Usuario {
 
     public abstract String getTipoUsuario();
 
-        public String getNombre() {
+    public String getNombre() {
         return nombre;
     }
 
@@ -45,6 +45,12 @@ public abstract class Usuario {
 
     public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
+    }
+
+    // Nuevo método para validar usuario y contraseña
+    public boolean validarCredenciales(String usuarioIngresado, String contraseñaIngresada) {
+        return this.usuario != null && this.usuario.equals(usuarioIngresado) &&
+               this.contraseña != null && this.contraseña.equals(contraseñaIngresada);
     }
 }
 
