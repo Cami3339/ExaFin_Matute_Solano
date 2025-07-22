@@ -1,7 +1,7 @@
 package vista;
 
-import modelo.Habitacion;
-import modelo.TipoHabitacion;
+import modelos.Habitacion;
+import modelos.TipoHabitacion;
 import util.ArchivoUtil;
 
 import javax.swing.*;
