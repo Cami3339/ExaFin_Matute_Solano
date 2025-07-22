@@ -1,16 +1,14 @@
 package vista;
 
+import java.awt.*;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import modelos.Cliente;
 import modelos.Habitacion;
 import modelos.Reserva;
 import util.ArchivoUtil;
-
-import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
-import java.awt.*;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 public class PanelReservas extends JPanel {
     private JComboBox<String> cmbClientes;
@@ -35,7 +33,14 @@ public class PanelReservas extends JPanel {
         clientes = ArchivoUtil.cargar(RUTA_CLIENTES);
         habitaciones = ArchivoUtil.cargar(RUTA_HABITACIONES);
 
-        JPanel form = new JPanel(new GridLayout(6, 2));
+        Color fondo = new Color(250, 250, 255);
+        Color azul = new Color(63, 81, 181);
+        Font fuente = new Font("Segoe UI", Font.PLAIN, 14);
+
+        JPanel form = new JPanel(new GridLayout(6, 2, 10, 10));
+        form.setBorder(BorderFactory.createEmptyBorder(20, 40, 10, 40));
+        form.setBackground(fondo);
+
         cmbClientes = new JComboBox<>();
         cmbHabitaciones = new JComboBox<>();
         txtFechaInicio = new JTextField();
@@ -43,13 +48,20 @@ public class PanelReservas extends JPanel {
         lblTotal = new JLabel("Total: $0.00");
         JButton btnReservar = new JButton("Reservar");
 
-        form.add(new JLabel("Cliente:"));
+        for (Component comp : new Component[]{cmbClientes, cmbHabitaciones, txtFechaInicio, txtFechaFin, btnReservar}) {
+            comp.setFont(fuente);
+        }
+
+        lblTotal.setFont(fuente);
+        lblTotal.setForeground(new Color(56, 142, 60)); // verde
+
+        form.add(new JLabel("Cliente:")).setFont(fuente);
         form.add(cmbClientes);
-        form.add(new JLabel("Habitación #:"));
+        form.add(new JLabel("Habitación #:")).setFont(fuente);
         form.add(cmbHabitaciones);
-        form.add(new JLabel("Fecha inicio (yyyy-mm-dd):"));
+        form.add(new JLabel("Fecha inicio (yyyy-mm-dd):")).setFont(fuente);
         form.add(txtFechaInicio);
-        form.add(new JLabel("Fecha fin (yyyy-mm-dd):"));
+        form.add(new JLabel("Fecha fin (yyyy-mm-dd):")).setFont(fuente);
         form.add(txtFechaFin);
         form.add(new JLabel(""));
         form.add(lblTotal);
@@ -58,11 +70,20 @@ public class PanelReservas extends JPanel {
 
         modeloTabla = new DefaultTableModel(new String[]{"Cliente", "Hab#", "Inicio", "Fin", "Total"}, 0);
         tabla = new JTable(modeloTabla);
+        tabla.setFont(fuente);
+        tabla.setRowHeight(22);
+        tabla.getTableHeader().setFont(fuente.deriveFont(Font.BOLD));
         cargarDatosEnCombos();
         cargarTabla();
 
         add(form, BorderLayout.NORTH);
         add(new JScrollPane(tabla), BorderLayout.CENTER);
+        setBackground(fondo);
+
+        btnReservar.setBackground(azul);
+        btnReservar.setForeground(Color.WHITE);
+        btnReservar.setFocusPainted(false);
+        btnReservar.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
         btnReservar.addActionListener(e -> reservar());
     }
@@ -71,7 +92,6 @@ public class PanelReservas extends JPanel {
         for (Cliente c : clientes) {
             cmbClientes.addItem(c.getCedula() + " - " + c.getNombre());
         }
-
         for (Habitacion h : habitaciones) {
             if (h.isDisponible()) {
                 cmbHabitaciones.addItem(h.getNumero());
@@ -94,9 +114,16 @@ public class PanelReservas extends JPanel {
     private void reservar() {
         try {
             String cedula = cmbClientes.getSelectedItem().toString().split(" - ")[0];
-            Cliente cliente = clientes.stream().filter(c -> c.getCedula().equals(cedula)).findFirst().orElse(null);
+            Cliente cliente = clientes.stream()
+                .filter(c -> c.getCedula().equals(cedula))
+                .findFirst()
+                .orElse(null);
+
             int numHab = (int) cmbHabitaciones.getSelectedItem();
-            Habitacion habitacion = habitaciones.stream().filter(h -> h.getNumero() == numHab).findFirst().orElse(null);
+            Habitacion habitacion = habitaciones.stream()
+                .filter(h -> h.getNumero() == numHab)
+                .findFirst()
+                .orElse(null);
 
             LocalDate inicio = LocalDate.parse(txtFechaInicio.getText());
             LocalDate fin = LocalDate.parse(txtFechaFin.getText());
@@ -106,7 +133,6 @@ public class PanelReservas extends JPanel {
                 return;
             }
 
-            // Validar superposición
             for (Reserva r : reservas) {
                 if (r.getHabitacion().getNumero() == numHab) {
                     if (!(fin.isBefore(r.getFechaInicio()) || inicio.isAfter(r.getFechaFin()))) {
@@ -120,7 +146,6 @@ public class PanelReservas extends JPanel {
             reservas.add(nueva);
             ArchivoUtil.guardar(RUTA_RESERVAS, reservas);
 
-            // Actualizar tabla
             modeloTabla.addRow(new Object[]{
                 cliente.getNombre(),
                 habitacion.getNumero(),
