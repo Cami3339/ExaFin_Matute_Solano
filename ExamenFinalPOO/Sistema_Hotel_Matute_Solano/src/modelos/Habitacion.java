@@ -1,6 +1,8 @@
+import java.io.Serializable;
+
 package modelo;
 
-public class Habitacion {
+public class Habitacion implements Serializable {
     private int numero;
     private TipoHabitacion tipo;
     private boolean disponible;
