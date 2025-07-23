@@ -16,19 +16,6 @@
    javac -d bin src/**/*.java  
    java main.Main
 
-## 📸 Capturas de Pantalla
-
-1. **Login**  
-   ![Login](/imagenesExam/Login.jpg)
-
-2. **Menú Principal**  
-   ![Menú Principal](/imagenesExam/Clientes.jpg)
-
-3. **Formulario de Reserva**  
-   ![Formulario de Reserva](/imagenesExam/Reservas.jpg)
-
-4. **Tabla de Habitaciones**  
-   ![Tabla de Habitaciones](/imagenesExam/Habitaciones.jpg)
 
 ## 🧩 Diagrama UML
 
