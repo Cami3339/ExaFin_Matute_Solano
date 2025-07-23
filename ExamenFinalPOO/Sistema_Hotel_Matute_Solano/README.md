@@ -15,13 +15,6 @@
 2. Compilar y ejecutar desde IDE o consola:  
    javac -d bin src/**/*.java  
    java main.Main
-
-
-## 🧩 Diagrama UML
-
-![UML](/imagenesExam/GestionHotel.png)
-
-
 ## Estructura del Proyecto
 /src
  ├─ modelos/
